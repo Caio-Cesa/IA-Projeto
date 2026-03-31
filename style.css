@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #F3F4F6;
+    color: #334155;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #002A5A;
+    color: #FFFFFF;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #E2E8F0;
+    font-weight: 400;
+}
+
+main {
+    flex: 1;
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    padding: 0 1.5rem;
+    width: 100%;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    background: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.status-badge {
+    background-color: #DBEAFE;
+    color: #1E3A8A;
+    padding: 0.5rem 1.25rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
+.progress-section {
+    background-color: #FFFFFF;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    margin-bottom: 3rem;
+}
+
+.progress-section h2 {
+    color: #002A5A;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #E2E8F0;
+    border-radius: 12px;
+    height: 28px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1E3A8A 0%, #3B82F6 100%);
+    border-radius: 12px;
+    transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.progress-text {
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.section-title {
+    color: #002A5A;
+    margin-bottom: 1.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #FFFFFF;
+    border-top: 4px solid #1E3A8A;
+    padding: 1.75rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+    color: #002A5A;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.card p {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-indicator {
+    padding: 0.35rem 0.85rem;
+    border-radius: 9999px;
+    background-color: #F1F5F9;
+    color: #475569;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.status-indicator::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+}
+
+.status-Concluído { background-color: #DCFCE7; color: #166534; }
+.status-Em-Andamento { background-color: #FEF3C7; color: #92400E; }
+.status-Pendente { background-color: #F1F5F9; color: #64748B; }
+
+.accuracy {
+    color: #1E3A8A;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: #EFF6FF;
+    padding: 0.35rem 0.75rem;
+    border-radius: 8px;
+}
+
+footer {
+    background-color: #002A5A;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

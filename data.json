@@ -1,0 +1,32 @@
+{
+  "nome_projeto": "Dashboard de Progresso - IA Pareceres Lei 14.133",
+  "fase_atual": "Treinamento e Validação de Modelos",
+  "progresso_geral": 65,
+  "data_atualizacao": "2026-03-31",
+  "milestones": [
+    {
+      "titulo": "Coleta e Estruturação de Dados Jurídicos",
+      "descricao": "Extração e organização de pareceres e licitações anteriores.",
+      "status": "Concluído",
+      "nivel_precisao": "100%"
+    },
+    {
+      "titulo": "Treinamento Inicial do Modelo de Linguagem",
+      "descricao": "Fine-tuning em base de dados de licitações com base na Lei 14.133.",
+      "status": "Concluído",
+      "nivel_precisao": "85%"
+    },
+    {
+      "titulo": "Validação e Ajustes Finais pela Equipe Jurídica",
+      "descricao": "Revisão qualitativa dos pareceres gerados pela IA juntamente aos especialistas.",
+      "status": "Em Andamento",
+      "nivel_precisao": "70%"
+    },
+    {
+      "titulo": "Integração ao Sistema de Emissão de Pareceres",
+      "descricao": "Implementação final da API para a equipe gerar os pareceres em tempo real.",
+      "status": "Pendente",
+      "nivel_precisao": "N/A"
+    }
+  ]
+}

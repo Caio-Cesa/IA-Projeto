@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Jurídico - IA Pareceres Lei 14.133</title>
+    <!-- Fonte moderna e corporativa -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 id="project-title">Carregando Projeto...</h1>
+        <p>Acompanhamento Estratégico do Modelo de Inteligência Artificial</p>
+    </header>
+
+    <main>
+        <!-- Resumo do Projeto -->
+        <div class="dashboard-header">
+            <div>
+                <strong>Fase Atual:</strong> <span class="status-badge" id="current-phase">Carregando...</span>
+            </div>
+            <div style="font-size: 0.95rem; color: #64748b; font-weight: 600;">
+                Última atualização: <span id="last-update">--/--/----</span>
+            </div>
+        </div>
+
+        <!-- Barra de Progresso -->
+        <section class="progress-section">
+            <h2>Progresso Geral do Modelo</h2>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill" id="progress-bar" style="width: 0%;">
+                    <span class="progress-text" id="progress-text">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marcos do Projeto -->
+        <section>
+            <h2 class="section-title">Marcos Históricos (Milestones)</h2>
+            <div class="cards-grid" id="milestones-container">
+                <!-- Cards renderizados dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Responsável técnico: Caio &copy; 2026</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('data.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Falha ao carregar o arquivo de dados');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Preencher dados principais
+                    document.getElementById('project-title').textContent = data.nome_projeto;
+                    document.getElementById('current-phase').textContent = data.fase_atual;
+                    
+                    // Formatar data (ex: de 2026-03-31 para 31/03/2026)
+                    const dateParts = data.data_atualizacao.split('-');
+                    let formattedDate = data.data_atualizacao;
+                    if(dateParts.length === 3) {
+                        formattedDate = `${dateParts[2]}/${dateParts[1]}/${dateParts[0]}`;
+                    }
+                    document.getElementById('last-update').textContent = formattedDate;
+
+                    // Atualizar barra de progresso
+                    const progressBar = document.getElementById('progress-bar');
+                    const progressText = document.getElementById('progress-text');
+                    
+                    // Delay para acionar transição CSS
+                    setTimeout(() => {
+                        progressBar.style.width = `${data.progresso_geral}%`;
+                        progressText.textContent = `${data.progresso_geral}%`;
+                    }, 100);
+
+                    // Renderizar cards
+                    const container = document.getElementById('milestones-container');
+                    
+                    data.milestones.forEach(milestone => {
+                        const card = document.createElement('div');
+                        card.className = 'card';
+                        
+                        // Adaptar classes para os estilos
+                        let statusNormalized = milestone.status.replace(/ /g, '-').replace('í', 'i');
+                        if (milestone.status === 'Concluído') statusNormalized = 'Concluído'; // mantendo compatibilidade com CSS
+                        const statusClass = 'status-' + statusNormalized;
+
+                        card.innerHTML = `
+                            <h3>${milestone.titulo}</h3>
+                            <p>${milestone.descricao}</p>
+                            <div class="card-meta">
+                                <span class="status-indicator ${statusClass}">${milestone.status}</span>
+                                <span class="accuracy" title="Nível de Precisão da IA">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <line x1="12" y1="16" x2="12" y2="12"></line>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                    </svg>
+                                    ${milestone.nivel_precisao}
+                                </span>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    document.getElementById('project-title').textContent = 'Erro ao carregar os dados do projeto';
+                });
+        });
+    </script>
+</body>
+</html>
