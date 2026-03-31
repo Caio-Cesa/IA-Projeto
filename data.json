@@ -1,16 +1,14 @@
 {
-  "nome_projeto": "Dashboard de Progresso - IA Pareceres (Lei 14.133)",
+  "nome_projeto": "Dashboard de Progresso - IA Pareceres",
   "fase_atual": "Coleta de Dados e Setup de Infraestrutura Local",
   "progresso_geral": 15,
   "data_atualizacao": "2026-03-31",
-  
   "metricas_dados": {
     "documentos_positivos": 120,
     "documentos_negativos": 45,
     "normas_processadas": 10,
     "total_documentos": 175
   },
-
   "experimentos": [
     {
       "tecnologia": "Copilot Web (Office 365)",
@@ -19,7 +17,6 @@
       "aprendizado": "Necessidade de um modelo com Fine-Tuning especializado e hospedagem local (On-Premise) para garantir sigilo."
     }
   ],
-
   "milestones": [
     {
       "titulo": "1. Definição da Estratégia e Prova de Conceito (PoC)",
