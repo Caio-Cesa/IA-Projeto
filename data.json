@@ -28,7 +28,7 @@
       "titulo": "2. Coleta e Curadoria de Dados Jurídicos",
       "descricao": "Separação de pareceres de sucesso (o que seguir) e de falhas/restrições (o que não seguir), além de normas.",
       "status": "Em Andamento",
-      "nivel_precisao": "30%"
+      "nivel_precisao": "20%"
     },
     {
       "titulo": "3. Setup de Infraestrutura e Segurança (Modelo Local)",
