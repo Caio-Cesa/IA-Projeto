@@ -1,20 +1,20 @@
 {
   "nome_projeto": "Dashboard de Progresso - IA Pareceres",
   "fase_atual": "Coleta de Dados e Setup de Infraestrutura Local",
-  "progresso_geral": 15,
+  "progresso_geral": 10,
   "data_atualizacao": "2026-03-31",
   "metricas_dados": {
-    "documentos_positivos": 120,
-    "documentos_negativos": 45,
-    "normas_processadas": 10,
-    "total_documentos": 175
+    "documentos_positivos": 20,
+    "documentos_negativos": 16,
+    "normas_processadas": 3,
+    "total_documentos": 39
   },
   "experimentos": [
     {
       "tecnologia": "Copilot Web (Office 365)",
       "status": "Descontinuado",
-      "motivo": "Baixo desempenho no contexto jurídico específico e preocupações com envio de dados sensíveis para nuvem pública.",
-      "aprendizado": "Necessidade de um modelo com Fine-Tuning especializado e hospedagem local (On-Premise) para garantir sigilo."
+      "motivo": "Baixo desempenho no contexto jurídico específico.",
+      "aprendizado": "Necessidade de um modelo com Fine-Tuning especializado e hospedagem local."
     }
   ],
   "milestones": [
@@ -26,7 +26,7 @@
     },
     {
       "titulo": "2. Coleta e Curadoria de Dados Jurídicos",
-      "descricao": "Separação de pareceres de sucesso (o que seguir) e de falhas/restrições (o que não seguir), além de normas da Lei 14.133.",
+      "descricao": "Separação de pareceres de sucesso (o que seguir) e de falhas/restrições (o que não seguir), além de normas.",
       "status": "Em Andamento",
       "nivel_precisao": "30%"
     },
