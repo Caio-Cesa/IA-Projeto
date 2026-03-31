@@ -187,6 +187,90 @@ main {
 .status-Concluído { background-color: #DCFCE7; color: #166534; }
 .status-Em-Andamento { background-color: #FEF3C7; color: #92400E; }
 .status-Pendente { background-color: #F1F5F9; color: #64748B; }
+.status-Descontinuado { background-color: #FEE2E2; color: #991B1B; }
+
+/* ---- Métricas de Dados ---- */
+.metrics-section {
+    margin-bottom: 3rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-top: 4px solid #DBEAFE;
+}
+
+.metric-card.total-metric {
+    border-top: 4px solid #3B82F6;
+    background-color: #EFF6FF;
+}
+
+.metric-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1E3A8A;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    font-size: 0.95rem;
+    color: #64748B;
+    font-weight: 600;
+}
+
+/* ---- Experimentos ---- */
+.experiments-section {
+    margin-bottom: 3rem;
+}
+
+.experiments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experiment-item {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #EF4444; 
+}
+
+.experiment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #E2E8F0;
+    padding-bottom: 0.75rem;
+}
+
+.experiment-header h3 {
+    color: #002A5A;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.experiment-item p {
+    color: #475569;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.experiment-item p:last-child {
+    margin-bottom: 0;
+}
 
 .accuracy {
     color: #1E3A8A;

@@ -36,6 +36,22 @@
             </div>
         </section>
 
+        <!-- Métricas de Dados -->
+        <section class="metrics-section">
+            <h2 class="section-title">Métricas de Coleta de Dados</h2>
+            <div class="metrics-grid" id="metrics-container">
+                <!-- Cards renderizados dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+
+        <!-- Experimentos e Aprendizados -->
+        <section class="experiments-section">
+            <h2 class="section-title">Histórico de Experimentos e Pivotagens</h2>
+            <div class="experiments-list" id="experiments-container">
+                <!-- Itens renderizados dinamicamente pelo JavaScript -->
+            </div>
+        </section>
+
         <!-- Marcos do Projeto -->
         <section>
             <h2 class="section-title">Marcos Históricos (Milestones)</h2>
@@ -81,7 +97,50 @@
                         progressText.textContent = `${data.progresso_geral}%`;
                     }, 100);
 
-                    // Renderizar cards
+                    // Renderizar Métricas de Dados
+                    if (data.metricas_dados) {
+                        const metricsContainer = document.getElementById('metrics-container');
+                        const labels = {
+                            'documentos_positivos': 'Documentos Positivos (Para Seguir)',
+                            'documentos_negativos': 'Documentos Negativos (Restrições)',
+                            'normas_processadas': 'Normas Processadas',
+                            'total_documentos': 'Total de Documentos'
+                        };
+                        for (const [key, value] of Object.entries(data.metricas_dados)) {
+                            if (labels[key]) {
+                                const metricCard = document.createElement('div');
+                                metricCard.className = 'metric-card ' + (key === 'total_documentos' ? 'total-metric' : '');
+                                metricCard.innerHTML = `
+                                    <div class="metric-value">${value}</div>
+                                    <div class="metric-label">${labels[key]}</div>
+                                `;
+                                metricsContainer.appendChild(metricCard);
+                            }
+                        }
+                    }
+
+                    // Renderizar Experimentos
+                    if (data.experimentos) {
+                        const experimentsContainer = document.getElementById('experiments-container');
+                        data.experimentos.forEach(exp => {
+                            const expItem = document.createElement('div');
+                            expItem.className = 'experiment-item';
+                            // Normaliza o status para a classe CSS
+                            const statusNormalizado = exp.status.replace(/ /g, '-').replace('í', 'i');
+                            
+                            expItem.innerHTML = `
+                                <div class="experiment-header">
+                                    <h3>${exp.tecnologia}</h3>
+                                    <span class="status-indicator status-${statusNormalizado}">${exp.status}</span>
+                                </div>
+                                <p><strong>Motivo:</strong> ${exp.motivo}</p>
+                                <p><strong>Aprendizado:</strong> ${exp.aprendizado}</p>
+                            `;
+                            experimentsContainer.appendChild(expItem);
+                        });
+                    }
+
+                    // Renderizar cards de Milestones
                     const container = document.getElementById('milestones-container');
                     
                     data.milestones.forEach(milestone => {

@@ -1,32 +1,61 @@
 {
-  "nome_projeto": "Dashboard de Progresso - IA Pareceres Lei 14.133",
-  "fase_atual": "Treinamento e Validação de Modelos",
-  "progresso_geral": 65,
+  "nome_projeto": "Dashboard de Progresso - IA Pareceres (Lei 14.133)",
+  "fase_atual": "Coleta de Dados e Setup de Infraestrutura Local",
+  "progresso_geral": 15,
   "data_atualizacao": "2026-03-31",
+  
+  "metricas_dados": {
+    "documentos_positivos": 120,
+    "documentos_negativos": 45,
+    "normas_processadas": 10,
+    "total_documentos": 175
+  },
+
+  "experimentos": [
+    {
+      "tecnologia": "Copilot Web (Office 365)",
+      "status": "Descontinuado",
+      "motivo": "Baixo desempenho no contexto jurídico específico e preocupações com envio de dados sensíveis para nuvem pública.",
+      "aprendizado": "Necessidade de um modelo com Fine-Tuning especializado e hospedagem local (On-Premise) para garantir sigilo."
+    }
+  ],
+
   "milestones": [
     {
-      "titulo": "Coleta e Estruturação de Dados Jurídicos",
-      "descricao": "Extração e organização de pareceres e licitações anteriores.",
+      "titulo": "1. Definição da Estratégia e Prova de Conceito (PoC)",
+      "descricao": "Testes iniciais de viabilidade usando ferramentas comerciais de IA.",
       "status": "Concluído",
-      "nivel_precisao": "100%"
-    },
-    {
-      "titulo": "Treinamento Inicial do Modelo de Linguagem",
-      "descricao": "Fine-tuning em base de dados de licitações com base na Lei 14.133.",
-      "status": "Concluído",
-      "nivel_precisao": "85%"
-    },
-    {
-      "titulo": "Validação e Ajustes Finais pela Equipe Jurídica",
-      "descricao": "Revisão qualitativa dos pareceres gerados pela IA juntamente aos especialistas.",
-      "status": "Em Andamento",
-      "nivel_precisao": "70%"
-    },
-    {
-      "titulo": "Integração ao Sistema de Emissão de Pareceres",
-      "descricao": "Implementação final da API para a equipe gerar os pareceres em tempo real.",
-      "status": "Pendente",
       "nivel_precisao": "N/A"
+    },
+    {
+      "titulo": "2. Coleta e Curadoria de Dados Jurídicos",
+      "descricao": "Separação de pareceres de sucesso (o que seguir) e de falhas/restrições (o que não seguir), além de normas da Lei 14.133.",
+      "status": "Em Andamento",
+      "nivel_precisao": "30%"
+    },
+    {
+      "titulo": "3. Setup de Infraestrutura e Segurança (Modelo Local)",
+      "descricao": "Configuração do ambiente isolado pela equipe de Infraestrutura para treinamento e deploy sem dependência de APIs externas.",
+      "status": "Em Andamento",
+      "nivel_precisao": "10%"
+    },
+    {
+      "titulo": "4. Treinamento Base e Fine-Tuning do Modelo",
+      "descricao": "Treinamento do modelo open-source utilizando o dataset curado na fase 2.",
+      "status": "Pendente",
+      "nivel_precisao": "0%"
+    },
+    {
+      "titulo": "5. Validação Qualitativa pela Equipe Jurídica",
+      "descricao": "Testes cegos e homologação dos pareceres gerados pela IA.",
+      "status": "Pendente",
+      "nivel_precisao": "0%"
+    },
+    {
+      "titulo": "6. Integração e Implantação Contínua",
+      "descricao": "Disponibilização da ferramenta em ambiente seguro para os procuradores.",
+      "status": "Pendente",
+      "nivel_precisao": "0%"
     }
   ]
 }
