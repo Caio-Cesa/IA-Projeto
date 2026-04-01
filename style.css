@@ -42,6 +42,24 @@ main {
     width: 100%;
 }
 
+.approval-banner {
+    background-color: #FEF3C7;
+    border-left: 4px solid #F59E0B;
+    color: #92400E;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.approval-banner svg {
+    flex-shrink: 0;
+}
+
 .dashboard-header {
     display: flex;
     justify-content: space-between;
